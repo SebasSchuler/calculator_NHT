@@ -1,5 +1,7 @@
 class Calculator():
-    def sumar(self, num1, num2):
+    '''Calculator with bitwise operators'''
+    def add(self, num1, num2):
+        ''' Returns sum of two integers  '''
         while (num2 != 0):
             carry = num1 & num2
             num1 = num1 ^ num2
@@ -7,7 +9,8 @@ class Calculator():
         
         return num1
 
-    def restar(self, num1, num2):
+    def subtract(self, num1, num2):
+        ''' Return subtraction of two integers '''
         while (num2 != 0):
             borrow = (~num1) & num2
             num1 = num1 ^ num2
@@ -15,7 +18,8 @@ class Calculator():
         
         return num1
 
-    def multiplicar(self, num1, num2):
+    def multiplication(self, num1, num2):
+        ''' Returns multiplication of two numbers '''
         res = 0
  
         while (num2 > 0):
@@ -28,6 +32,7 @@ class Calculator():
         return res
 
     def division(self, num1, num2):
+        ''' Returns division of two numbers '''
         sign = -1 if ((num1 < 0) ^ (num2 < 0)) else 1
     
         num1 = abs(num1)
